@@ -932,7 +932,7 @@ const App = () => {
   const [examSearch, setExamSearch] = useState('');
   const [editingStudent, setEditingStudent] = useState(null);
   const [showAddStudent, setShowAddStudent] = useState(false);
-  const [newStudent, setNewStudent] = useState({ name:'', phone:'', notes:'', age:'5' });
+  const [newStudent, setNewStudent] = useState({ name:'', phone:'', notes:'', age:'' });
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
@@ -1494,7 +1494,7 @@ const App = () => {
     const tid = toast.loading('جاري الإضافة...');
     try {
       await supabase.from('students').insert([{ ...newStudent, student_code: generateStudentCode() }]);
-      await loadStudents(); setNewStudent({ name:'', phone:'', notes:'', age:'5' }); setShowAddStudent(false);
+      await loadStudents(); setNewStudent({ name:'', phone:'', notes:'', age:'' }); setShowAddStudent(false);
       toast.success('تم الإضافة! ✅', { id: tid });
     } catch { toast.error('حدث خطأ!', { id: tid }); }
   };
