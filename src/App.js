@@ -3293,15 +3293,11 @@ return {success:true};
                     <h3 style={{ fontWeight:800, marginBottom:14, color:'var(--gold)', fontSize:15 }}>✨ طالب جديد</h3>
                     <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(160px,1fr))', gap:10, marginBottom:12 }}>
                       <input className="inp" type="text" placeholder="اسم الطالب *" value={newStudent.name} onChange={e=>setNewStudent({...newStudent,name:e.target.value})}/>
-                      <select className="inp" value={newStudent.age} onChange={e=>setNewStudent({...newStudent,age:e.target.value})}>
-                        <option value="4">سنة 4</option><option value="5">سنة 5</option><option value="6">سنة 6</option>  <option value="1 اعدادي">سنة 1 اعدادي</option> 
-                      </select>
                       <input className="inp" type="text" placeholder="رقم الهاتف" value={newStudent.phone} onChange={e=>setNewStudent({...newStudent,phone:e.target.value})}/>
-                      <input className="inp" type="text" placeholder="ملاحظات" value={newStudent.notes} onChange={e=>setNewStudent({...newStudent,notes:e.target.value})}/>
                     </div>
                     <div style={{ display:'flex', gap:8 }}>
                       <button onClick={addStudent} className="btn btn-green btn-sm">حفظ</button>
-                      <button onClick={()=>{ setShowAddStudent(false); setNewStudent({name:'',phone:'',notes:'',age:'5'}); }} className="btn btn-ghost btn-sm">إلغاء</button>
+                      <button onClick={()=>{ setShowAddStudent(false); setNewStudent({name:'',phone:'',notes:'',age:''}); }} className="btn btn-ghost btn-sm">إلغاء</button>
                     </div>
                   </div>
                 )}
